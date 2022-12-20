@@ -1,11 +1,9 @@
-const container = document.querySelector('#container');
-const boxes = document.querySelectorAll('#container li');
+/* 메인최상위 선언 및 하위 컨텐츠 박스 선언 */
+const container = document.querySelector('#mainWrapper');
+const boxes = document.querySelectorAll('#mainWapper section');
 
-    const scrollLeft = (e) =>{
-        //wheel.Event.deltaY 세로 스크롤시 값 반환, 읽기전용
-        // console.log(e.deltaY);
-        container.scrollLeft += e.deltaY;
-        // console.log(num);
-    }
-    
+/* 가로스크롤 이벤트 */
+const scrollLeft = (e) =>{
+    container.scrollLeft += e.deltaY;
+}  
 container.addEventListener('wheel', scrollLeft)
