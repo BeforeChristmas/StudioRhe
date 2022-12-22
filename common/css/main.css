@@ -50,6 +50,50 @@ html {
   transition-delay: 0s;
 }
 
+/* page main */
+.pageScreen {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: absolute;
+  z-index: 9999;
+}
+
+.pageScreen .downToup {
+  width: 33.5%;
+  height: 0%;
+  background-color: rgb(240, 100, 70);
+  -webkit-animation: downToup 1s cubic-bezier(0.98, 0.01, 0.43, 1);
+          animation: downToup 1s cubic-bezier(0.98, 0.01, 0.43, 1);
+}
+
+.pageScreen .downToup:nth-child(2) {
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+}
+
+.pageScreen .downToup:nth-child(3) {
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+}
+
+/* animation */
+@-webkit-keyframes downToup {
+  0% {
+    height: 100%;
+  }
+  100% {
+    height: 0;
+  }
+}
+@keyframes downToup {
+  0% {
+    height: 100%;
+  }
+  100% {
+    height: 0;
+  }
+}
 /* main */
 #mainWrapper {
   width: 100%;
@@ -87,7 +131,10 @@ html {
 }
 
 #FirstContainer {
-  background: url("../images/main_img/1665158307-studio-rhe-hero.jpg") no-repeat 50%/cover;
+  background-image: url("../images/main_img/1665158307-studio-rhe-hero.jpg");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
   position: relative;
 }
 
