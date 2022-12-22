@@ -184,6 +184,7 @@ header .headerLeft{
     border-left-width:1px;
     display: flex;
     position: relative;
+    transition: .5s;
 }
 header .headerLeft .Head{
     font-size:0.975em;

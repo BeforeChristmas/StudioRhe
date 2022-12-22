@@ -223,6 +223,7 @@ header .headerLeft {
   border-left-width: 1px;
   display: flex;
   position: relative;
+  transition: 0.5s;
 }
 
 header .headerLeft .Head {

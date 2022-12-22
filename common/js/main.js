@@ -15,13 +15,15 @@ const logoArea = document.querySelector('#logoContainer');
 
 /* 가로스크롤 이벤트 */
 const scrollLeft = (e) =>{
-    let scrLeft = container.scrollLeft += e.deltaY;
+    let scrLeft = container.scrollLeft += e.deltaY - 50;
     console.log(scrLeft);
-
-    if(scrLeft > 100){
+    
+    if(scrLeft >= 100){
         logoArea.style.opacity = '0'
+        haeder.style.borderLeft = '1px solid #bfbfbf'
     } else {
         logoArea.style.opacity = '1'
+        haeder.style.borderLeft = '0'
     }
 }  
 container.addEventListener('wheel', scrollLeft)
