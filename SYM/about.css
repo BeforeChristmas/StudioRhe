@@ -153,17 +153,18 @@ body {
 
 #wrapper .box7 .videoWrapper {
   position: relative;
-  height: 900px;
+  height: 800px;
   width: 710px;
   cursor: pointer;
 }
 #wrapper .box7 img {
   position: absolute;
-  height: 900px;
+  height: 800px;
   width: 710px;
   z-index: 99;
   cursor: pointer;
   transition: 1s;
+  object-fit: cover;
 }
 /* 이미지를 눌렀을 때 */
 #wrapper .box7 img.active {
@@ -171,10 +172,12 @@ body {
   transition: 1s;
 }
 #wrapper .box7 .videoWrapper video {
-  height: 900px;
+  height: 800px;
   position: absolute;
   object-fit: cover;
   cursor: pointer;
+}
+#wrapper .box7 .videoWrapper video.active {
 }
 #wrapper .box8 {
   background-color: #3d4442;

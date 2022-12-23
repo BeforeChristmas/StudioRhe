@@ -105,7 +105,8 @@ imgs.forEach((img, idx) => {
     imgs[idx].style.opacity = 0;
     videos[idx].play();
   });
-  img.addEventListener("dbclick", (e) => {
+
+  img.addEventListener("mouseleave", (e) => {
     imgs[idx].style.opacity = 1;
     videos[idx].pause();
   });
