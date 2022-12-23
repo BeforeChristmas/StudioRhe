@@ -110,11 +110,39 @@ html {
     background-size: 100%;
   }
 }
-/* main */
-.scrollBox {
-  overflow-x: hidden;
+@-webkit-keyframes imgScale {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
-
+@keyframes imgScale {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes titleRising {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes titleRising {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* main */
 #mainWrapper {
   width: 100%;
   height: 100vh;
@@ -134,7 +162,7 @@ html {
 }
 
 #mainWrapper #logoContainer {
-  width: 7%;
+  width: 120px;
   padding: 30px 18px 18px 30px;
   position: absolute;
   z-index: 99;
@@ -198,6 +226,12 @@ html {
   text-indent: -50px;
   color: #fff;
   z-index: 99;
+  overflow: hidden;
+}
+
+#FirstContainer .introbox .h2Title .titRight, .titLeft {
+  -webkit-animation: titleRising 1s ease;
+          animation: titleRising 1s ease;
 }
 
 #FirstContainer .shadowBox {
@@ -243,7 +277,7 @@ header .headerLeft .Head.off span {
 
 header .headerLeft .Head .headLogoChange {
   opacity: 0;
-  transform: translate(66%) rotate(0deg);
+  transform: translate(66%, -22%) rotate(0deg);
   transition: 0.5s;
 }
 
