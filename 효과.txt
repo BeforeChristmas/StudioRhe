@@ -1,0 +1,8 @@
+로고 사라지는 효과 js 추가
+ ㄴ최상단일때 op 1, 스크롤다운시 op0
+
+read more 밑줄 js 추가
+back to top 밑줄 js 추가
+
+
+부드러운 스크롤 js 추가
