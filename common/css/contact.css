@@ -42,10 +42,43 @@ body {
     font-family: 'the-serif';
     font-style: italic;
     margin-top: 90px;
+    cursor: pointer;
 }
 .main article .box1 button:before{
     content:"Let's talk!";
 }
+.main article .box1 button::after {
+  content: '';
+  display:block;
+  width: 53px;
+  border-bottom: 1px solid #000;
+  transition: .3s;
+  transform-origin:  100% 50%;
+  transform: scaleX(1);
+  transition-delay: .3s;
+}
+.main article .box1 button:hover::after {
+  content: '';
+  transition: .3s;
+  transform: scaleX(0);
+}
+
+.main article .box1 button .border::after {
+  content: '';
+  display: block;
+  border-bottom: #000 1px solid;
+  width: 53px;
+  transition: .3s;
+  
+  transform-origin: 0% 100%;
+  transform: scaleX(0);
+}
+.main article .box1 button:hover .border::after {
+  content: '';
+  transition-delay: .3s;
+  transform: scale(1);
+} 
+
 /* 박스2 */
 .main article .box2 h2 {
     font-size: 14px;
