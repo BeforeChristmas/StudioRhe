@@ -99,12 +99,15 @@ richardI.addEventListener("click", (e) => {
 const imgs = document.querySelectorAll(".box7 img");
 const videos = document.querySelectorAll(".box7 video");
 const videoWrapper = document.querySelectorAll(".videoWrapper");
-
+const playBtn = document.querySelectorAll("#playBtn");
+const playBtnA = document.querySelectorAll("#playBtn a");
 imgs.forEach((img, idx) => {
   img.addEventListener("click", (e) => {
     imgs[idx].style.opacity = 0;
     videos[idx].style.zIndex = 999;
     videos[idx].play();
+    playBtn[idx].style.opacity = 0;
+    playBtnA[idx].classList.toggle("active");
   });
 });
 
@@ -112,9 +115,21 @@ videos.forEach((wp, idx) => {
   wp.addEventListener("click", (e) => {
     imgs[idx].style.opacity = 1;
     videos[idx].style.zIndex = 0;
+    videos[idx].pause();
+    playBtnA[idx].classList.toggle("active");
   });
 });
 
+videoWrapper.forEach((wp, idx) => {
+  wp.addEventListener("mouseover", (e) => {
+    playBtn[idx].style.opacity = 1;
+  });
+  wp.addEventListener("mouseleave", (e) => {
+    playBtn[idx].style.opacity = 0;
+  });
+});
+
+// 재생버튼
 // 휠을 굴리면 프로필 이미지 약축소효과
 
 let observer = new IntersectionObserver((e) => {
@@ -152,3 +167,5 @@ addEventListener("wheel", () => {
     logo.style.opacity = 1;
   }
 });
+
+//

@@ -2,7 +2,47 @@
 html {
   scroll-behavior: smooth;
 }
-body {
+
+/* 공통 사용 */
+.uLine {
+  position: relative;
+  line-height: 1.1;
+  font-style: italic;
+  color: inherit;
+}
+
+.uLine::before {
+  transform-origin: right;
+  transform: scaleX(1);
+  transition-delay: 0s;
+}
+
+.uLine::after {
+  transform-origin: left;
+  transform: scaleX(0);
+  transition-delay: 0s;
+}
+
+.uLine::before,
+.uLine::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-top: 1px solid;
+  transition: transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.uLine::before,
+.uLine:hover::after {
+  transform: scaleX(1);
+  transition-delay: 0.25s;
+}
+
+.uLine:hover::before {
+  transform: scaleX(0);
+  transition-delay: 0s;
 }
 
 #wrapper {
@@ -140,9 +180,8 @@ body {
 #wrapper .box6 a {
   text-decoration: none;
   color: inherit;
-
-  text-decoration: underline;
   font-style: italic;
+  margin: 0 auto;
 }
 #wrapper .box7 {
   padding: 3vw;
@@ -158,7 +197,7 @@ body {
 #wrapper .box7 div figure a {
   color: inherit;
   font-style: italic;
-  text-decoration: underline;
+  text-decoration: none;
 }
 #wrapper .box7 figure {
   position: relative;
@@ -171,6 +210,44 @@ body {
   cursor: pointer;
   overflow: hidden;
 }
+/* 재생버튼 */
+/* 마우스를 올려놓았을 때 */
+#wrapper .box7 .videoWrapper #playBtn {
+  width: 60px;
+  height: 60px;
+  background-color: #f06446;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  z-index: 9999;
+  opacity: 0;
+  transition: 0.3s;
+}
+.videoWrapper #playBtn a {
+  display: block;
+  width: 0;
+  height: 0;
+  border-right: none;
+  border-top: solid 12px transparent;
+  border-bottom: solid 12px transparent;
+  border-left: solid 15px white;
+  transform: translateX(32px) translateX(-50%) translateY(30px) translateY(-50%);
+  transition: 0.3s;
+}
+/* 비디오를 재생했을 때 */
+.videoWrapper #playBtn a.active {
+  display: block;
+  width: 8px;
+  height: 20px;
+  border-right: 2px solid white;
+  border-top: none;
+  border-bottom: none;
+  border-left: 2px solid white;
+  transform: translateX(30px) translateX(-50%) translateY(30px) translateY(-50%);
+  transition: 0.3s;
+}
+
 #wrapper .box7 img {
   position: absolute;
   height: 800px;
@@ -256,9 +333,10 @@ body {
   margin: 0 auto;
 }
 #wrapper .box10 a {
-  text-decoration: underline;
   color: inherit;
   font-style: italic;
+  margin: 0 auto;
+  text-decoration: none;
 }
 #wrapper .menuBar {
   /* 우측 메뉴 바 */
@@ -351,6 +429,7 @@ body {
   position: absolute;
   bottom: 50px;
   left: 50px;
+  transition: 1s;
 }
 #wrapper #gnb li:nth-child(2):hover {
   background-color: #f06446;
