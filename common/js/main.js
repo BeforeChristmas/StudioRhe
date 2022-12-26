@@ -23,6 +23,8 @@ const rdJournal = document.querySelector('.contBox:nth-child(3) figure img');
 /* h2Title 제목부분 영역 선언 */
 const titRight = document.querySelectorAll('.titRight span');
 const titLeft = document.querySelectorAll('.titLeft span');
+/* 저널 애니메이션 */
+const jornalTrans = document.querySelectorAll('.aniTextBox > li');
 /* progress 영역 선언 */
 const proGress = document.querySelector('.headProgress');
 
@@ -65,6 +67,15 @@ const scrollLeft = (e) =>{
             break;
         case 2500:
             rdartWorkBox.style.animation = '1s ease 0s 1 normal none running imgScale'
+            break;
+        case 5600:
+            for(let idx = 0; idx < jornalTrans.length ; idx++){
+                 if(container.scrollLeft < 5600){
+                    jornalTrans[idx].classList.remove('on');
+                 }else{
+                    jornalTrans[idx].classList.add('on');
+                 }
+            }
             break;
         case 6500:
             stJournal.style.animation = '1s ease 0s 1 normal none running imgScale'
@@ -112,6 +123,11 @@ function pageAniTime() {
             }, 1800)
         }
     }); */
+    /* toptit.forEach(idx => {
+        setTimeout(() => {
+            toptit[idx].style.animation ='titleRising 2s ease'
+        }, 2900);
+    }) */
     setTimeout(() => {
        pScreen.style.display ='none' 
     }, 2900);

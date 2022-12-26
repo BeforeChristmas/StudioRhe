@@ -114,6 +114,14 @@ html{
         transform: translateY(0);
     }
 }
+@keyframes journalRising {
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
 /* header */
 header {
     position: fixed;
@@ -352,10 +360,20 @@ header #gnb.active li:nth-child(4) {
     font-weight:300;
     color:#fff;
     margin-right:102px;
+    overflow:hidden;
 }
 #FirstContainer .introbox .topLeftComment span{
     display:block;
     width:100%;
+    overflow:hidden;
+    animation: titleRising 1.5s ease;
+    animation-delay: 1s;
+}
+#FirstContainer .introbox .topLeftComment span:nth-child(2){
+    animation-duration: 1.6s;
+}
+#FirstContainer .introbox .topLeftComment span:nth-child(3){
+    animation-duration: 1.7s;
 }
 #FirstContainer .introbox .h2Title{
     letter-spacing: -.005em;
@@ -372,10 +390,12 @@ header #gnb.active li:nth-child(4) {
 }
 #FirstContainer .introbox .h2Title .titLeft span{
     animation: titleRising 1.5s ease;
+    animation-delay: 0.4s;
     display:inline-block;
 }
 #FirstContainer .introbox .h2Title .titRight span{
     animation: titleRising 1.5s ease;
+    animation-delay: 0.4s;
     display:inline-block;
 }
 /* span 부분 애니메이션 삽질 */
@@ -428,6 +448,8 @@ header #gnb.active li:nth-child(4) {
 #FirstContainer .introbox .h2Title .titRight span:nth-child(8){
     animation-duration: 2.5s
 }
+/* span 애니메이션 삽질 끝 */
+
 #FirstContainer .shadowBox{
     background-image: linear-gradient(transparent,rgba(0,0,0,.65));
     position: absolute;
@@ -596,6 +618,9 @@ header #gnb.active li:nth-child(4) {
 #mainWrapper #fourthContainer .journalBox .textBox .flexBox{
    margin-top:30px;
 }  
+#mainWrapper #fourthContainer .journalBox .aniTextBox {
+   overflow:hidden;
+}
 #mainWrapper #fourthContainer .journalBox .aniTextBox .aniTransform{
    font-size:16.875em;
    font-weight:300;
@@ -603,6 +628,28 @@ header #gnb.active li:nth-child(4) {
    display:inline-block;
    color:#fff;
    line-height: 1.1;
+   overflow:hidden;
+}
+#mainWrapper #fourthContainer .journalBox .aniTextBox .aniTransform.on{
+    animation : journalRising 1s ease;
+}
+#mainWrapper #fourthContainer .journalBox .aniTextBox .aniTransform.on:nth-child(2){
+    animation-delay: .1s;
+}
+#mainWrapper #fourthContainer .journalBox .aniTextBox .aniTransform.on:nth-child(3){
+    animation-delay: .2s;
+}
+#mainWrapper #fourthContainer .journalBox .aniTextBox .aniTransform.on:nth-child(4){
+    animation-delay: .3s;
+}
+#mainWrapper #fourthContainer .journalBox .aniTextBox .aniTransform.on:nth-child(5){
+    animation-delay: .4s;
+}
+#mainWrapper #fourthContainer .journalBox .aniTextBox .aniTransform.on:nth-child(6){
+    animation-delay: .5s;
+}
+#mainWrapper #fourthContainer .journalBox .aniTextBox .aniTransform.on:nth-child(7){
+    animation-delay: .6s;
 }
 /* journalList */
 #mainWrapper #fourthContainer .journalList{
