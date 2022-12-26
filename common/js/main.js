@@ -97,7 +97,7 @@ btn.addEventListener("click", (e) => {
 
 /* 페이지 로딩 스크린 이벤트 */
 function pageAniTime() {
-    /* downToUp.forEach((box, idx) => {
+    /* downToUp.forEach((idx) => {
         if (idx === 0){
             setTimeout(() => {
                 downToUp[idx].style.animation = 'downToup 2s cubic-bezier(.98,.01,.43,1)'
@@ -114,10 +114,9 @@ function pageAniTime() {
     }); */
     setTimeout(() => {
        pScreen.style.display ='none' 
-    }, 3500);
+    }, 2900);
 }
 pageAniTime();
-
 
 /* 헤더 영역 클릭시 active 클래스 추가 */
 btn.addEventListener('click', e =>{
@@ -125,7 +124,7 @@ btn.addEventListener('click', e =>{
 });
 
 /* 헤더 진행도 표시 */
-function crtprogress(){
+function crtProgress(){
     const scrollLt = container.scrollLeft;
     const scrollWd = container.scrollWidth;
     const clientWd = container.clientWidth;
@@ -134,4 +133,4 @@ function crtprogress(){
 
     proGress.innerHTML = Math.floor(currentWidth) + `%`;
 }
-addEventListener('wheel', crtprogress);
+addEventListener('wheel', crtProgress);

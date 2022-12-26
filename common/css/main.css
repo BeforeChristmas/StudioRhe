@@ -62,18 +62,18 @@ html {
   width: 33.5%;
   height: 0%;
   background-color: rgb(240, 100, 70);
-  -webkit-animation: downToup 3s cubic-bezier(0.98, 0.01, 0.43, 1);
-          animation: downToup 3s cubic-bezier(0.98, 0.01, 0.43, 1);
+  -webkit-animation: downToup 1.5s cubic-bezier(0.98, 0.01, 0.43, 1);
+          animation: downToup 1.5s cubic-bezier(0.98, 0.01, 0.43, 1);
 }
 
 .pageScreen .downToup:nth-child(2) {
-  -webkit-animation-duration: 3.2s;
-          animation-duration: 3.2s;
+  -webkit-animation-duration: 1.7s;
+          animation-duration: 1.7s;
 }
 
 .pageScreen .downToup:nth-child(3) {
-  -webkit-animation-duration: 3.5s;
-          animation-duration: 3.5s;
+  -webkit-animation-duration: 1.9s;
+          animation-duration: 1.9s;
 }
 
 /* animation */
@@ -451,7 +451,7 @@ header #gnb.active li:nth-child(4) {
 }
 
 #FirstContainer .introbox .h2Title {
-  letter-spacing: -0.101em;
+  letter-spacing: -0.005em;
   font-size: 12.13vw;
   width: 100%;
   text-align: center;
@@ -462,15 +462,99 @@ header #gnb.active li:nth-child(4) {
 }
 
 #FirstContainer .introbox .h2Title .titRight, .titLeft {
-  -webkit-animation: titleRising 1s ease;
-          animation: titleRising 1s ease;
   display: inline-block;
+}
+
+#FirstContainer .introbox .h2Title .titLeft span {
+  -webkit-animation: titleRising 1.5s ease;
+          animation: titleRising 1.5s ease;
+  display: inline-block;
+}
+
+#FirstContainer .introbox .h2Title .titRight span {
+  -webkit-animation: titleRising 1.5s ease;
+          animation: titleRising 1.5s ease;
+  display: inline-block;
+}
+
+/* span 부분 애니메이션 삽질 */
+#FirstContainer .introbox .h2Title .titLeft span:nth-child(2) {
+  -webkit-animation-duration: 1.6s;
+          animation-duration: 1.6s;
+}
+
+#FirstContainer .introbox .h2Title .titLeft span:nth-child(3) {
+  -webkit-animation-duration: 1.65s;
+          animation-duration: 1.65s;
+}
+
+#FirstContainer .introbox .h2Title .titLeft span:nth-child(4) {
+  -webkit-animation-duration: 1.7s;
+          animation-duration: 1.7s;
+}
+
+#FirstContainer .introbox .h2Title .titLeft span:nth-child(5) {
+  -webkit-animation-duration: 1.75s;
+          animation-duration: 1.75s;
+}
+
+#FirstContainer .introbox .h2Title .titLeft span:nth-child(6) {
+  -webkit-animation-duration: 1.8s;
+          animation-duration: 1.8s;
+}
+
+#FirstContainer .introbox .h2Title .titLeft span:nth-child(7) {
+  -webkit-animation-duration: 1.85s;
+          animation-duration: 1.85s;
+}
+
+#FirstContainer .introbox .h2Title .titLeft span:nth-child(8) {
+  -webkit-animation-duration: 1.9s;
+          animation-duration: 1.9s;
 }
 
 #FirstContainer .introbox .h2Title .titRight {
   margin-left: 100px;
-  -webkit-animation-duration: 1.3s;
-          animation-duration: 1.3s;
+}
+
+#FirstContainer .introbox .h2Title .titRight span {
+  -webkit-animation-duration: 1.9s;
+          animation-duration: 1.9s;
+}
+
+#FirstContainer .introbox .h2Title .titRight span:nth-child(2) {
+  -webkit-animation-duration: 1.95s;
+          animation-duration: 1.95s;
+}
+
+#FirstContainer .introbox .h2Title .titRight span:nth-child(3) {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+#FirstContainer .introbox .h2Title .titRight span:nth-child(4) {
+  -webkit-animation-duration: 2.1s;
+          animation-duration: 2.1s;
+}
+
+#FirstContainer .introbox .h2Title .titRight span:nth-child(5) {
+  -webkit-animation-duration: 2.2s;
+          animation-duration: 2.2s;
+}
+
+#FirstContainer .introbox .h2Title .titRight span:nth-child(6) {
+  -webkit-animation-duration: 2.3s;
+          animation-duration: 2.3s;
+}
+
+#FirstContainer .introbox .h2Title .titRight span:nth-child(7) {
+  -webkit-animation-duration: 2.4s;
+          animation-duration: 2.4s;
+}
+
+#FirstContainer .introbox .h2Title .titRight span:nth-child(8) {
+  -webkit-animation-duration: 2.5s;
+          animation-duration: 2.5s;
 }
 
 #FirstContainer .shadowBox {
