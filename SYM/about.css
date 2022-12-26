@@ -156,6 +156,7 @@ body {
   height: 800px;
   width: 710px;
   cursor: pointer;
+  overflow: hidden;
 }
 #wrapper .box7 img {
   position: absolute;
@@ -165,6 +166,7 @@ body {
   cursor: pointer;
   transition: 1s;
   object-fit: cover;
+  transform: scale();
 }
 /* 이미지를 눌렀을 때 */
 #wrapper .box7 img.active {

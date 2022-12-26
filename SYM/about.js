@@ -42,7 +42,7 @@ addEventListener("wheel", (e) => {
   }
 });
 
-// 우측 바 스크롤 인디케이터 (99가 최대임..)
+// 우측 바 스크롤 인디케이터
 const sIndi = document.querySelector(".scrollIndi");
 
 function progress() {
@@ -103,11 +103,35 @@ const videoWrapper = document.querySelectorAll(".videoWrapper");
 imgs.forEach((img, idx) => {
   img.addEventListener("click", (e) => {
     imgs[idx].style.opacity = 0;
+    videos[idx].style.zIndex = 999;
     videos[idx].play();
   });
+});
 
-  img.addEventListener("mouseleave", (e) => {
+videos.forEach((wp, idx) => {
+  wp.addEventListener("click", (e) => {
     imgs[idx].style.opacity = 1;
-    videos[idx].pause();
+    videos[idx].style.zIndex = 0;
   });
 });
+
+// 휠을 굴리면 프로필 이미지 약축소효과
+
+AOS.init();
+
+// const scrollLeft = wrapper.scrollLeft;
+// const scrollWidth = wrapper.scrollWidth;
+// const clientWidth = wrapper.clientWidth;
+
+// let width = (scrollLeft / (scrollWidth - clientWidth)) * 100;
+
+// const richardI = document.querySelector(".box7-1 figure .videoWrapper img");
+// const richardV = document.querySelector(".box7-1 figure .videoWrapper video");
+
+// addEventListener("wheel", () => {
+//   if (width >= 0 && width <= 35) {
+//     richardI.style.transform = `scale(1)`;
+//   } else if (width > 35) {
+//     richardI.style.transform = `scale(1.5)`;
+//   }
+// });
