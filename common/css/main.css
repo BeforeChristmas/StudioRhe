@@ -62,16 +62,22 @@ html {
   width: 33.5%;
   height: 0%;
   background-color: rgb(240, 100, 70);
+  display: none;
+}
+
+.pageScreen .downToup.on {
+  height: 100%;
+  display: block;
   -webkit-animation: downToup 1.5s cubic-bezier(0.98, 0.01, 0.43, 1);
           animation: downToup 1.5s cubic-bezier(0.98, 0.01, 0.43, 1);
 }
 
-.pageScreen .downToup:nth-child(2) {
+.pageScreen .downToup.on:nth-child(2) {
   -webkit-animation-duration: 1.7s;
           animation-duration: 1.7s;
 }
 
-.pageScreen .downToup:nth-child(3) {
+.pageScreen .downToup.on:nth-child(3) {
   -webkit-animation-duration: 1.9s;
           animation-duration: 1.9s;
 }

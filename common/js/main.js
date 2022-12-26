@@ -43,6 +43,8 @@ const containerScrL = container.scrollLeft;
     container.style.transfrom = `translateX(-${scrNum}px)`;
 } */
 //container.addEventListener('wheel', transNum);
+
+
 const scrollLeft = (e) =>{
     let transNum = container.scrollLeft += e.deltaY;
     // e.preventDefault();
@@ -128,9 +130,12 @@ function pageAniTime() {
             toptit[idx].style.animation ='titleRising 2s ease'
         }, 2900);
     }) */
-    setTimeout(() => {
-       pScreen.style.display ='none' 
-    }, 2900);
+    setTimeout(() => {  
+        for(let ind = 0; ind < downToUp.length; ind++ ){
+            downToUp[ind].classList.remove('on');
+        }
+        pScreen.style.display = 'none'
+    }, 1520);
 }
 pageAniTime();
 
@@ -139,7 +144,7 @@ btn.addEventListener('click', e =>{
     e.preventDefault();
 });
 
-/* 헤더 진행도 표시 */
+/* 스크롤 진행도 표시 */
 function crtProgress(){
     const scrollLt = container.scrollLeft;
     const scrollWd = container.scrollWidth;
