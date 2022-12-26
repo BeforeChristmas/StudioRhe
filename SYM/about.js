@@ -117,21 +117,38 @@ videos.forEach((wp, idx) => {
 
 // 휠을 굴리면 프로필 이미지 약축소효과
 
-AOS.init();
+let observer = new IntersectionObserver((e) => {
+  // e 는 감시중인 div박스
+  e.forEach((img) => {
+    if (img.isIntersecting) {
+      //박스가 등장시 실행됨
+      img.target.style.transform = `scale(1)`; //서서히 나타남
+    } else {
+      //박스가 사라지면 실행됨
+      // img.target.style.opacity = 0; //서서히 사라짐
+    }
+  });
+});
 
-// const scrollLeft = wrapper.scrollLeft;
-// const scrollWidth = wrapper.scrollWidth;
-// const clientWidth = wrapper.clientWidth;
+// observer.observe() html 요소가 화면에 등장하는지 감시
+observer.observe(imgs[0]);
+observer.observe(imgs[1]);
+observer.observe(imgs[2]);
+observer.observe(imgs[3]);
+observer.observe(imgs[4]);
+observer.observe(imgs[5]);
+observer.observe(imgs[6]);
+observer.observe(imgs[7]);
+observer.observe(imgs[8]);
+observer.observe(imgs[9]);
 
-// let width = (scrollLeft / (scrollWidth - clientWidth)) * 100;
+// 좌측 상단 로고 애니메이션
 
-// const richardI = document.querySelector(".box7-1 figure .videoWrapper img");
-// const richardV = document.querySelector(".box7-1 figure .videoWrapper video");
-
-// addEventListener("wheel", () => {
-//   if (width >= 0 && width <= 35) {
-//     richardI.style.transform = `scale(1)`;
-//   } else if (width > 35) {
-//     richardI.style.transform = `scale(1.5)`;
-//   }
-// });
+const logo = document.querySelector(".box1 a");
+addEventListener("wheel", () => {
+  if (wrapper.scrollLeft > 100) {
+    logo.style.opacity = 0;
+  } else if (wrapper.scrollLeft <= 100) {
+    logo.style.opacity = 1;
+  }
+});
