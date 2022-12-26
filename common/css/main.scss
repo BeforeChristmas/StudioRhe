@@ -1,5 +1,5 @@
 @charset "utf-8"; 
-/* 믹스인 사용 */
+// 믹스인 사용
 @mixin title{
    font-size:2.625em;
    font-weight:500;
@@ -63,13 +63,13 @@ html{
 .pageScreen .downToup{
     width:33.5%;height:0%;
     background-color: $rhecolor;
-    animation: downToup 1s cubic-bezier(.98,.01,.43,1);
+    animation: downToup 3s cubic-bezier(.98,.01,.43,1);
 }
 .pageScreen .downToup:nth-child(2){
-    animation-duration: 1.2s;
+    animation-duration: 3.2s;
 }
 .pageScreen .downToup:nth-child(3){
-    animation-duration: 1.5s;
+    animation-duration: 3.5s;
 }
 /* animation */
 @keyframes downToup {
@@ -98,6 +98,14 @@ html{
         transform: scale(1);
     }
 }
+@keyframes imgScale2 {
+    0%{
+        transform: translateX(-25%) scale(1.2);
+    }
+    100%{
+        transform: translateX(-25%) scale(1);
+    }
+}
 @keyframes titleRising {
     0%{
         transform: translateY(100%);
@@ -106,11 +114,189 @@ html{
         transform: translateY(0);
     }
 }
-
-/* main */
-.scrollBox{
-    // overflow-x:hidden;
+/* header */
+header {
+    position: fixed;
+    height:100%;
+    z-index:999;
+    right:0;
+    font-family: 'the-serif';
 }
+header .headerLeft{
+    background-color:#fff;
+    width:3.750em;height:100%;
+    border-left-width:1px;
+    display: flex;
+    position: relative;
+    z-index: 999999;
+    transition: .5s;
+}
+header .headerLeft .Head{
+    font-size:0.975em;
+    font-style: italic;
+    font-weight:300;
+    text-transform: capitalize;
+    position: absolute;
+    z-index:99999;
+    padding-top:45px;
+    transition: 0.5s;
+}
+header .headerLeft .Head.off span{
+    opacity: 0;
+}
+header .headerLeft .Head .headLogoChange{
+    opacity: 0;
+    transform: translate(66%, -22%) rotate(0deg);    
+    transition: .5s;
+}
+header .headerLeft .Head .headLogoChange svg{
+    width:20px;height:127px;
+}
+header .headerLeft .Head.off .headLogoChange{
+    opacity: 1;
+    width:50%
+}
+header .headerLeft .headProgress{
+    font-size:0.975em;
+    font-style: italic;
+    font-weight:300;
+    z-index:99999;
+    position: absolute;
+    bottom:0;
+    transform: rotate(-90deg) translateY(40px);
+    padding-bottom:55px;
+}
+header .headerLeft .Head span{
+    display:block;
+    color:#000;
+    transform: rotate(-90deg);
+}
+header .headerLeft .HeaderBtn{
+    width:100%;height:100%;
+    position: absolute;
+    z-index:99999;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .headerLeft .HeaderBtn .btnLine {
+    display:block;
+    width:1px; height:32px;
+    background-color:#000;
+    transition: .5s;
+}
+header .headerLeft .HeaderBtn .btnLine:nth-child(2) {
+    margin:0px 5px;
+}
+
+header .headerLeft.active .HeaderBtn .Line1 {
+    transform: rotate(26deg) translateX(6px);
+}
+header .headerLeft.active .HeaderBtn .Line2 {
+    height:0;
+}
+header .headerLeft.active .HeaderBtn .Line3 {
+    transform: rotate(-26deg) translateX(-6px);
+}
+/* 펼쳐지는 메뉴 */
+header .gnbBack{
+    position: fixed;
+    width:100%; height:100%;
+    top:0; right:0;
+    opacity: 0;
+    pointer-events: none;
+    transition: .5s;
+}
+header #gnb {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    transition: 1s;
+    background-color: white;
+    cursor: pointer;
+    z-index: 9999;
+}
+header #gnb li a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-size: 3em;
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+  }
+  header #gnb li:nth-child(2):hover {
+    background-color: #f06446;
+  }
+  header #gnb li:nth-child(2):hover a {
+    color: white;
+  }
+  header #gnb li:nth-child(3):hover {
+    background-color: #f06446;
+  }
+  header #gnb li:nth-child(3):hover a {
+    color: white;
+  }
+  header #gnb li:nth-child(4):hover {
+    background-color: #f06446;
+  }
+  header #gnb li:nth-child(4):hover a {
+    color: white;
+  }
+ /* 메뉴오픈 */ 
+ /* 펼쳐졌을 때 */
+ header #gnb.active {
+    width: 80vw;
+    height: 100vh;
+  }
+header #gnb.active + .gnbBack{
+    opacity: 1;
+    background-color: rgba($color: #000000, $alpha: .5);
+}
+header #gnb.active li {
+    border: 1px solid #bfbfbf;
+    position: absolute;
+    transition: 1s;
+    background-color: white;
+}
+header #gnb.active li:nth-child(1) {
+    /* about */
+    z-index: 999;
+    background-color: #f06446;
+    right: 70px;
+    top: 0;
+    width: 25%;
+    height: 25%;
+}
+header #gnb.active li:nth-child(1) a {
+    color: white;
+}
+header #gnb.active li:nth-child(2) {
+    z-index: 99;
+    right: 70px;
+    top: 0;
+    width: 50%;
+    height: 50%;
+}
+header #gnb.active li:nth-child(3) {
+    z-index: 9;
+    right: 70px;
+    top: 0;
+    width: 75%;
+    height: 75%;
+}
+header #gnb.active li:nth-child(4) {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+/* main */
+/* .scrollBox{
+    // overflow-x:hidden;
+} */
 #mainWrapper{
     width:100%;height: 100vh;
     box-sizing:border-box;
@@ -172,10 +358,9 @@ html{
     width:100%;
 }
 #FirstContainer .introbox .h2Title{
-    letter-spacing: -.025em;
-    font-size:13vw;
+    letter-spacing: -.101em;
+    font-size:12.13vw;
     width:100%;
-    text-transform: capitalize;
     text-align:center;
     text-indent: -50px;
     color:#fff;
@@ -184,6 +369,11 @@ html{
 }
 #FirstContainer .introbox .h2Title .titRight, .titLeft{
     animation: titleRising 1s ease;
+    display:inline-block;
+}
+#FirstContainer .introbox .h2Title .titRight{
+    margin-left:100px;
+    animation-duration: 1.3s;
 }
 #FirstContainer .shadowBox{
     background-image: linear-gradient(transparent,rgba(0,0,0,.65));
@@ -191,86 +381,6 @@ html{
     bottom:0;
     width:100%;height:40%;
     z-index:1;
-}
-header {
-    position: fixed;
-    height:100%;
-    z-index:999;
-    right:0;
-}
-header .headerLeft{
-    background-color:#fff;
-    width:3.750em;height:100%;
-    border-left-width:1px;
-    display: flex;
-    position: relative;
-    transition: .5s;
-}
-header .headerLeft .Head{
-    font-size:0.975em;
-    font-style: italic;
-    font-weight:300;
-    text-transform: capitalize;
-    position: absolute;
-    z-index:99;
-    padding-top:45px;
-    transition: 0.5s;
-}
-header .headerLeft .Head.off span{
-    opacity: 0;
-}
-header .headerLeft .Head .headLogoChange{
-    opacity: 0;
-    transform: translate(66%, -22%) rotate(0deg);    
-    transition: .5s;
-}
-header .headerLeft .Head .headLogoChange svg{
-    width:20px;height:127px;
-}
-header .headerLeft .Head.off .headLogoChange{
-    opacity: 1;
-    width:50%
-}
-header .headerLeft .headProgress{
-    font-size:0.975em;
-    font-style: italic;
-    font-weight:300;
-    position: absolute;
-    bottom:0;
-    transform: rotate(-90deg) translateY(40px);
-    padding-bottom:45px;
-}
-header .headerLeft .Head span{
-    display:block;
-    color:#000;
-    transform: rotate(-90deg);
-}
-header .headerLeft .HeaderBtn{
-    width:100%;height:100%;
-    position: absolute;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
-
-header .headerLeft .HeaderBtn .btnLine {
-    display:block;
-    width:1px; height:32px;
-    background-color:#000;
-    transition: .5s;
-}
-header .headerLeft .HeaderBtn .btnLine:nth-child(2) {
-    margin:0px 5px;
-}
-
-header .headerLeft.active .HeaderBtn .Line1 {
-    transform: rotate(26deg) translateX(6px);
-}
-header .headerLeft.active .HeaderBtn .Line2 {
-    height:0;
-}
-header .headerLeft.active .HeaderBtn .Line3 {
-    transform: rotate(-26deg) translateX(-6px);
 }
 
 #mainWrapper #secondContainer{
