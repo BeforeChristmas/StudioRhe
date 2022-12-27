@@ -218,6 +218,7 @@ header .headerLeft .Head .headLogoChange {
   opacity: 0;
   transform: translate(66%, -22%) rotate(0deg);
   transition: 0.5s;
+  position: absolute;
 }
 
 header .headerLeft .Head .headLogoChange svg {
@@ -479,13 +480,13 @@ header #gnb.active li:nth-child(4) {
 }
 
 #FirstContainer .introbox .topLeftComment span:nth-child(2) {
-  -webkit-animation-duration: 1.6s;
-          animation-duration: 1.6s;
+  -webkit-animation-delay: 1.1s;
+          animation-delay: 1.1s;
 }
 
 #FirstContainer .introbox .topLeftComment span:nth-child(3) {
-  -webkit-animation-duration: 1.7s;
-          animation-duration: 1.7s;
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
 }
 
 #FirstContainer .introbox .h2Title {

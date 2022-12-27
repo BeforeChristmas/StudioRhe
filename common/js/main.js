@@ -70,9 +70,9 @@ const scrollLeft = (e) =>{
         case 2500:
             rdartWorkBox.style.animation = '1s ease 0s 1 normal none running imgScale'
             break;
-        case 5600:
+        case 5300:
             for(let idx = 0; idx < jornalTrans.length ; idx++){
-                 if(container.scrollLeft < 5600){
+                 if(container.scrollLeft < 5300){
                     jornalTrans[idx].classList.remove('on');
                  }else{
                     jornalTrans[idx].classList.add('on');
