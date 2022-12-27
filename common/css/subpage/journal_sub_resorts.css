@@ -2,7 +2,6 @@
 html{
     scroll-behavior: smooth;
     font-size: calc(100vw/var(--size)*10);
-    overflow-x: hidden;
 }
 body{
     font-size: clamp(12px,18px,1.4rem);
@@ -56,7 +55,7 @@ header .wrapper .menu {
     margin: 0 0.7rem;
     color: rgba(0, 0, 0, 0.25);
 }
-.menu .gnb li:nth-child(1) a{
+.menu .gnb li:nth-child(4) a{
     color: #000;
 }
 .menu .gnb li a:hover {
@@ -114,35 +113,35 @@ main .mainWrapper article a span::before {
     content: "Read more";
 }
 main .mainWrapper article a span::after {
-    content: '';
-    display:block;
-    width: 63px;
-    border-bottom: 1px solid #000;
-    transition: .3s;
-    transform-origin:  100% 50%;
-    transform: scaleX(1);
-    transition-delay: .3s;
+  content: '';
+  display:block;
+  width: 63px;
+  border-bottom: 1px solid #000;
+  transition: .3s;
+  transform-origin:  100% 50%;
+  transform: scaleX(1);
+  transition-delay: .3s;
 }
 main .mainWrapper article a span:hover::after {
-    content: '';
-    transition: .3s;
-    transform: scaleX(0);
+  content: '';
+  transition: .3s;
+  transform: scaleX(0);
 }
 
- main .mainWrapper article a span .border::after {
-    content: '';
-    display: block;
-    border-bottom: #000 1px solid;
-    width: 63px;
-    transition: .3s;
-    
-    transform-origin: 0% 100%;
-    transform: scaleX(0);
+main .mainWrapper article a span .border::after {
+  content: '';
+  display: block;
+  border-bottom: #000 1px solid;
+  width: 63px;
+  transition: .3s;
+  
+  transform-origin: 0% 100%;
+  transform: scaleX(0);
 }
 main .mainWrapper article a span:hover .border::after {
-    content: '';
-    transition-delay: .3s;
-    transform: scale(1);
+  content: '';
+  transition-delay: .3s;
+  transform: scale(1);
 } 
 
 
@@ -156,15 +155,11 @@ main .mainWrapper article a img:hover {
     transform: scale(1.02);
 }
 
-main .mainWrapper article.box1 a img{height: 33.611vw;}
-main .mainWrapper article.box2 a img{height: 26.925vw;}
-main .mainWrapper article.box3 a img{height: 23.6715vw;}
-main .mainWrapper article.box4 a img{height: 31.724vw;}
-main .mainWrapper article.box5 a img{height: 22.064vw;}
-main .mainWrapper article.box6 a img{height: 27.629vw;}
-main .mainWrapper article.box7 a img{height: 28.858vw;}
-main .mainWrapper article.box8 a img{height: 28.32vw;}
-main .mainWrapper article.box9 a img{height: 26.974vw;}
+main .mainWrapper article.box1 a img{height: 35.1083vw;}
+main .mainWrapper article.box2 a img{height: 32.9198vw;}
+main .mainWrapper article.box3 a img{height: 30.1334vw;}
+main .mainWrapper article.box4 a img{height: 23.4790vw;}
+main .mainWrapper article.box5 a img{height: 24.0601vw;}
 /* 최하단 */
 .footer {
     height: 250px;
@@ -183,31 +178,31 @@ main .mainWrapper article.box9 a img{height: 26.974vw;}
   z-index: 1;
 }
 .footer a span::after {
-    content: "";
-    display: block;
-    border-bottom: #000 1px solid;
-    transition: .3s;
-    transform-origin:  100% 50%;
-    transform: scaleX(1);
-    transition-delay: .3s;
+  content: "";
+  display: block;
+  border-bottom: #000 1px solid;
+  transition: .3s;
+  transform-origin:  100% 50%;
+  transform: scaleX(1);
+  transition-delay: .3s;
 }
 .footer a span:hover::after {
-    content: '';
-    transition: .3s;
-    transform: scaleX(0);
+  content: '';
+  transition: .3s;
+  transform: scaleX(0);
 }
 .footer span .border::after {
-    content: '';
-    display: block;
-    border-bottom: 1px solid #000;
-    transition: .3s;
-    transform-origin: 0% 100%;
-    transform: scaleX(0);
+  content: '';
+  display: block;
+  border-bottom: 1px solid #000;
+  transition: .3s;
+  transform-origin: 0% 100%;
+  transform: scaleX(0);
 }
 .footer span .border:hover::after {
-    content: '';
-    transition-delay: .3s;
-    transform: scale(1);
+  content: '';
+  transition-delay: .3s;
+  transform: scale(1);
 }
 
 /* 우측 메뉴 바 */
@@ -305,14 +300,11 @@ main .mainWrapper article.box9 a img{height: 26.974vw;}
   #wrapper #gnb li a {
     display: block;
     text-decoration: none;
-    color: #000;
+    color: black;
     font-size: 3em;
     position: absolute;
     bottom: 50px;
     left: 50px;
-  }
-  #wrapper #gnb li:nth-child(3) a {
-    color: #fff;
   }
   #wrapper #gnb li:nth-child(1):hover {
     background-color: #f06446;
@@ -366,8 +358,6 @@ main .mainWrapper article.box9 a img{height: 26.974vw;}
   height: 50%;
 }
 #wrapper #gnb.active li:nth-child(3) {
-  color: #fff;
-  background-color: #f06446;
   z-index: 9;
   right: 70px;
   top: 0;
