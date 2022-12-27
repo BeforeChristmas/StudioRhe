@@ -66,25 +66,53 @@ addEventListener("wheel", (e) => {
 
 // 런던 글자 애니메이션
 
-const london = document.querySelector(".down");
-addEventListener("wheel", (e) => {
-  if (wrapper.scrollLeft > 500) {
-    // console.log(wrapper.scrollLeft);
-    london.style.opacity = 1;
-    london.style.transform = `translateY(20vh)`;
+// const london = document.querySelector(".down");
+// addEventListener("wheel", (e) => {
+//   if (wrapper.scrollLeft > 500) {
+//     // console.log(wrapper.scrollLeft);
+//     london.style.opacity = 1;
+//     london.style.transform = `translateY(20vh)`;
+//   }
+// });
+
+// // 어워즈 글자 애니메이션
+
+// const awards = document.querySelector(".box8 h1");
+
+// addEventListener("wheel", () => {
+//   if (wrapper.scrollLeft > 13500) {
+//     awards.style.opacity = 1;
+//     awards.style.transform = `translateY(20vh)`;
+//   }
+// });
+
+const londonTrans = document.querySelectorAll(".box2-2 > .aniTextbox > li");
+const awardsTrans = document.querySelectorAll(".box8 > .aniTextbox > li");
+
+const scrollLeft = (e) => {
+  let transNum = (wrapper.scrollLeft += e.deltaY);
+  console.log(transNum);
+
+  switch (transNum) {
+    case 600:
+      for (let idx = 0; idx < londonTrans.length; idx++) {
+        if (wrapper.scrollLeft < 500) {
+          londonTrans[idx].classList.remove("on");
+        } else {
+          londonTrans[idx].classList.add("on");
+        }
+      }
+    case 13600:
+      for (let idx = 0; idx < awardsTrans.length; idx++) {
+        if (wrapper.scrollLeft < 13500) {
+          awardsTrans[idx].classList.remove("on");
+        } else {
+          awardsTrans[idx].classList.add("on");
+        }
+      }
   }
-});
-
-// 어워즈 글자 애니메이션
-
-const awards = document.querySelector(".box8 h1");
-
-addEventListener("wheel", () => {
-  if (wrapper.scrollLeft > 13500) {
-    awards.style.opacity = 1;
-    awards.style.transform = `translateY(20vh)`;
-  }
-});
+};
+wrapper.addEventListener("wheel", scrollLeft);
 
 // 멤버들 프로필 비디오
 

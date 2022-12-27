@@ -64,7 +64,8 @@ html {
 
 #wrapper .box1 {
   width: 50vw;
-  background: url(../images/about_img/1660813077-about-hero.jpg) no-repeat 100% / cover;
+  background: url(../images/about_img/1660813077-about-hero.jpg) no-repeat 100% /
+    cover;
   position: relative;
 }
 /* 좌측 상단 로고 */
@@ -116,7 +117,7 @@ html {
   margin-top: 40px;
 }
 
-#wrapper .box2 .box2-2 h1 {
+/* #wrapper .box2 .box2-2 h1 {
   position: absolute;
   bottom: 0;
 
@@ -127,9 +128,35 @@ html {
 
   transition: 1.5s;
   opacity: 0;
+} */
+#wrapper .box2 .box2-2 .londonBox {
+  background-color: white;
+  width: 100%;
+  height: 30vh;
+  z-index: 999;
+  position: absolute;
+  bottom: 25vh;
+  /* opacity: 0; */
 }
+#wrapper .box2 .box2-2 .aniTextbox {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+
+  margin: 3vw;
+  margin-bottom: 20vh;
+  font-size: 18em;
+  letter-spacing: -7px;
+
+  /* opacity: 0; */
+}
+#wrapper .box2 .box2-2 .aniTextbox li {
+  z-index: 0;
+}
+
 #wrapper .box3 {
-  background: url(../images/about_img/1660570636-image-2-copy.jpg) no-repeat 100% / cover;
+  background: url(../images/about_img/1660570636-image-2-copy.jpg) no-repeat
+    100% / cover;
   width: 95vw;
 }
 #wrapper .box4 {
@@ -157,8 +184,8 @@ html {
 }
 #wrapper .box5 {
   width: 50vw;
-  background: url(../images/about_img/1660748652-dl-rhe-pr-4621-print-copy.jpg) no-repeat
-    100% / cover;
+  background: url(../images/about_img/1660748652-dl-rhe-pr-4621-print-copy.jpg)
+    no-repeat 100% / cover;
 }
 #wrapper .box6 {
   width: 50vw;
@@ -299,7 +326,7 @@ html {
 #wrapper .box8 .box8-1 td {
   font-style: italic;
 }
-#wrapper .box8 h1 {
+/* #wrapper .box8 h1 {
   font-family: "the-serif", sans-serif;
   font-size: 20em;
   position: absolute;
@@ -307,9 +334,29 @@ html {
 
   transition: 1.5s;
   margin-bottom: 20vh;
+} */
+#wrapper .box8 .awardsbox {
+  width: 90%;
+  height: 25vh;
+  background-color: #3d4442;
+  position: absolute;
+  bottom: 25vh;
+  z-index: 999;
+  transform: translateX(-10px);
 }
+#wrapper .box8 .aniTextbox {
+  font-family: "the-serif", sans-serif;
+  font-size: 16em;
+  position: absolute;
+  bottom: 0;
+
+  margin-bottom: 20vh;
+  display: flex;
+}
+
 #wrapper .box9 {
-  background: url(../images/about_img/1660813539-about-image.jpg) no-repeat 100% / cover;
+  background: url(../images/about_img/1660813539-about-image.jpg) no-repeat 100% /
+    cover;
   width: 60vw;
 }
 #wrapper .box10 {
@@ -498,4 +545,92 @@ html {
   height: 50px;
   color: black;
   transform: rotate(-90deg);
+}
+
+/* 애니메이션 */
+/* 런던 */
+@-webkit-keyframes london {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(70%);
+  }
+}
+@keyframes london {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(70%);
+  }
+}
+
+#wrapper .box2 .box2-2 .aniTextbox .aniTransform.on {
+  -webkit-animation: london 1s ease forwards;
+  animation: london 1s ease forwards;
+}
+
+#wrapper .box2 .box2-2 .aniTextbox .aniTransform.on:nth-child(2) {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+#wrapper .box2 .box2-2 .aniTextbox .aniTransform.on:nth-child(3) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+#wrapper .box2 .box2-2 .aniTextbox .aniTransform.on:nth-child(4) {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+#wrapper .box2 .box2-2 .aniTextbox .aniTransform.on:nth-child(5) {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+#wrapper .box2 .box2-2 .aniTextbox .aniTransform.on:nth-child(6) {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+
+@-webkit-keyframes awards {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(70%);
+  }
+}
+@keyframes awards {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(70%);
+  }
+}
+
+#wrapper .box8 .aniTextbox .aniTransform.on {
+  -webkit-animation: awards 1s ease forwards;
+  animation: awards 1s ease forwards;
+}
+
+#wrapper .box8 .aniTextbox .aniTransform.on:nth-child(2) {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+#wrapper .box8 .aniTextbox .aniTransform.on:nth-child(3) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+#wrapper .box8 .aniTextbox .aniTransform.on:nth-child(4) {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+#wrapper .box8 .aniTextbox .aniTransform.on:nth-child(5) {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+#wrapper .box8 .aniTextbox .aniTransform.on:nth-child(6) {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
