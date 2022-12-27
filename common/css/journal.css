@@ -218,6 +218,7 @@ main .mainWrapper article.box9 a img{height: 26.974vw;}
     top: 0;
     right: 0;
     z-index: 99999;
+    font-family: 'the-serif';
 }
 #wrapper .menuBar {
     width: 70px;
