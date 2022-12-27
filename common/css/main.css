@@ -316,6 +316,13 @@ header #gnb li a {
   left: 50px;
 }
 
+header #gnb li:nth-child(1):hover {
+  background-color: #f06446;
+}
+
+header #gnb li:nth-child(1):hover a {
+  color: white;
+}
 header #gnb li:nth-child(2):hover {
   background-color: #f06446;
 }
@@ -362,16 +369,16 @@ header #gnb.active li {
 header #gnb.active li:nth-child(1) {
   /* about */
   z-index: 999;
-  background-color: #f06446;
+  /* background-color: #f06446; */
   right: 70px;
   top: 0;
   width: 25%;
   height: 25%;
 }
 
-header #gnb.active li:nth-child(1) a {
+/* header #gnb.active li:nth-child(1) a {
   color: white;
-}
+} */
 
 header #gnb.active li:nth-child(2) {
   z-index: 99;
