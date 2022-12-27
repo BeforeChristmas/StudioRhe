@@ -88,14 +88,6 @@ addEventListener("wheel", () => {
 
 // 멤버들 프로필 비디오
 
-/* const richardI = document.querySelector(".box7-1 figure .videoWrapper img");
-const richardV = document.querySelector(".box7-1 figure .videoWrapper video");
-
-richardI.addEventListener("click", (e) => {
-  richardI.classList.toggle("active");
-  richardV.play();
-}); */
-
 const imgs = document.querySelectorAll(".box7 img");
 const videos = document.querySelectorAll(".box7 video");
 const videoWrapper = document.querySelectorAll(".videoWrapper");
@@ -129,7 +121,6 @@ videoWrapper.forEach((wp, idx) => {
   });
 });
 
-// 재생버튼
 // 휠을 굴리면 프로필 이미지 약축소효과
 
 let observer = new IntersectionObserver((e) => {
@@ -169,3 +160,49 @@ addEventListener("wheel", () => {
 });
 
 //
+// box1, box3, box5, box9 // slider = wrapper
+/* let images = document.querySelectorAll(".slide img");
+let wrapperWidth;
+let imageWidth;
+let current = 0;
+let target = 0;
+let ease = 0.05;
+
+function lerp(start, end, t) {
+  return start * (1 - t) + end * t;
+}
+
+function setTransform(el, transform) {
+  el.style.transform = transform;
+}
+
+function init() {
+  wrapperWidth = wrapper.getBoundingClientRect().width;
+  imageWidth = wrapperWidth / images.length;
+  document.body.style.height = `${
+    wrapperWidth - (window.innerWidth - window.innerHeight)
+  }px`;
+}
+
+function animate() {
+  current = parseFloat(lerp(current, target, ease)).toFixed(2);
+  target = scrolled;
+  console.log(target);
+  setTransform(wrapper, `translateX(-${current}px)`);
+  animateImages();
+  requestAnimationFrame(animate);
+}
+
+function animateImages() {
+  let ratio = current / imageWidth;
+  let intersectionRatioValue;
+
+  images.forEach((image, idx) => {
+    intersectionRatioValue = ratio - idx * 0.7;
+    setTransform(image, `translateX(${intersectionRatioValue * 70}px)`);
+  });
+}
+init();
+animate(); */
+
+// Select all links with hashes

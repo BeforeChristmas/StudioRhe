@@ -54,6 +54,26 @@ html {
   overflow: hidden;
 }
 
+/* 이미지 슬라이드 효과 */
+#wrapper .box1 {
+  width: 50vw;
+  /* background: url(./images/1660813077-about-hero.jpg) no-repeat 100% / cover; */
+  position: relative;
+}
+#wrapper .box3 {
+  /* background: url(./images/1660570636-image-2-copy.jpg) no-repeat 100% / cover; */
+  width: 95vw;
+}
+#wrapper .box5 {
+  width: 50vw;
+  /* background: url(./images/1660748652-dl-rhe-pr-4621-print-copy.jpg) no-repeat */
+  /* 100% / cover; */
+}
+#wrapper .box9 {
+  /* background: url(./images/1660813539-about-image.jpg) no-repeat 100% / cover; */
+  width: 60vw;
+}
+
 #wrapper > div {
   height: 100vh;
   flex-shrink: 0;
@@ -62,11 +82,6 @@ html {
   display: flex;
 }
 
-#wrapper .box1 {
-  width: 50vw;
-  background: url(./images/1660813077-about-hero.jpg) no-repeat 100% / cover;
-  position: relative;
-}
 /* 좌측 상단 로고 */
 #wrapper .box1 a {
   position: fixed;
@@ -128,10 +143,7 @@ html {
   transition: 1.5s;
   opacity: 0;
 }
-#wrapper .box3 {
-  background: url(./images/1660570636-image-2-copy.jpg) no-repeat 100% / cover;
-  width: 95vw;
-}
+
 #wrapper .box4 {
   background-color: #3d4442;
   width: 45vw;
@@ -155,11 +167,7 @@ html {
   margin-top: 30px;
   width: 70%;
 }
-#wrapper .box5 {
-  width: 50vw;
-  background: url(./images/1660748652-dl-rhe-pr-4621-print-copy.jpg) no-repeat
-    100% / cover;
-}
+
 #wrapper .box6 {
   width: 50vw;
   padding: 3vw;
@@ -308,10 +316,7 @@ html {
   transition: 1.5s;
   margin-bottom: 20vh;
 }
-#wrapper .box9 {
-  background: url(./images/1660813539-about-image.jpg) no-repeat 100% / cover;
-  width: 60vw;
-}
+
 #wrapper .box10 {
   background-color: #f06446;
   width: 46vw;
@@ -341,6 +346,7 @@ html {
 #wrapper .menuBar {
   /* 우측 메뉴 바 */
   width: 70px;
+  height: 100vh;
   position: fixed;
   right: 0;
   background-color: white;
